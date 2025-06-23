@@ -17,7 +17,7 @@
     {{-- navbar start --}}
 <nav class="navbar navbar-expand-lg  bg-latte-beige position-fixed top-0 glow" style="width: 100vw; z-index: 100;">
 
-    <ul class="nav nav-pills d-flex justify-content-between w-100">
+    <ul class="nav nav-pills d-flex justify-content-between w-100 px-4">
       <li class="nav-item ">
         <a class="foam-white  active" aria-current="page" href="#">Active</a>
       </li>
@@ -35,7 +35,14 @@
         <a class="foam-white nav-link" href="#">Link</a>
       </li>
       <li class="nav-item ">
-        <a class="foam-white nav-link disabled">About</a>
+        <a class="foam-white nav-link" href="{{ route('store') }}">store</a>
+      </li>
+      <li class="nav-item ">
+        {{-- halaman booking meja  --}}
+        <a class="foam-white nav-link" href="#">Reservasi Meja</a>
+      </li>
+      <li class="nav-item ">
+        <a class="foam-white " href="{{ route('about') }}">About</a>
       </li>
     </ul>
  
@@ -108,6 +115,10 @@
 
     
 @endif
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 
 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 </body>
