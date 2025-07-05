@@ -56,6 +56,7 @@
     color: #f8f5f2;
 }
 
+/* Dashboard start */
 .mask-botton {
     background-image: url("../../public/img/bg-coffe.jpg");
     min-height: 100vh;
@@ -68,4 +69,64 @@
         rgba(0, 0, 0, 1) 90%,
         rgba(0, 0, 0, 0)
     );
+}
+/* Dashboard and */
+
+/* Table Reservation start */
+.custom-card {
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.1); /* tipis */
+    backdrop-filter: blur(6px); /* efek blur latar belakang */
+    background-color: rgba(255, 255, 255, 0.7); /* transparansi */
+    transition: all 0.3s ease;
+}
+
+/* Opsional: efek hover */
+.custom-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Table Reservation and */
+
+/* Store start*/
+#main-menu {
+    display: none;
+
+    gap: 1rem;
+    transition: transform 0.3s cubic-bezier(0.4, 2, 0.6, 1), opacity 0.3s;
+    transform: translateY(-30px);
+    opacity: 0;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-height: 6.5rem;
+    pointer-events: none;
+}
+
+#main-menu.menu-mobile-show {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+/* store and */
+
+/* Tampilkan menu otomatis di layar besar */
+@media (min-width: 992px) {
+    /* store start */
+    #main-menu {
+        transform: none !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
+    /* store and */
+}
+
+@media (min-width: 768px) {
+    /* table reservation start */
+    .position-md-fixed {
+        position: fixed !important;
+    }
+
+    /* table reservation and */
 }

@@ -6,6 +6,11 @@
 -   `jquery` (javascript)
 -   `bootstrap` (css) Docs : ['https://getbootstrap.com/docs/5.2/getting-started/introduction/]
 
+Material stack
+
+-   [Boostrap icons ](https://icons.getbootstrap.com/)
+-   JetgranchMono
+
 ### Route
 
 1. `/` = halama dasboard utama

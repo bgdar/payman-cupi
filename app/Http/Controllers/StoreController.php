@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Store;
 
 use Illuminate\Http\Request;
 
@@ -10,9 +11,13 @@ class StoreController extends Controller
      * Display a listing of the resource.
      */
     public function index() {
-        //
-        return view('store.index');
+
+        //ambil 12 data dari urutan terbaru untuk di tampilkan
+        $All_data_store = Store::orderBy("id",direction: 'desc')->paginate(12); 
+        
+        return view('store.index',['datas'=>$All_data_store]);
     }
+    
 
     /**
      * Show the form for creating a new resource.

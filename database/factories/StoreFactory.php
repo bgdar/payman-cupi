@@ -23,6 +23,7 @@ class StoreFactory extends Factory
             'harga'=>$this->faker->numberBetween(),
             'on_sale'=>$this->faker->randomNumber(5),
 
+            
             //
         ];
     }
