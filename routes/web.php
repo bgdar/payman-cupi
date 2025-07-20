@@ -4,6 +4,7 @@ use App\Http\Controllers\StoreController;
 use App\Http\Controllers\TableRervationController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\admin;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 
@@ -15,7 +16,10 @@ Route::get("user/register",[UserController::class,"register"])->name('user.regis
 Route::get('/user',[UserController::class,'index'])->name('user');
 
 Route::get('/',  function () {
-    return view("dashboard");
+    //amsbil user yang sedang login saat ini | 
+    $isLogin = auth()->user()->name ?? null;
+
+    return view("dashboard",compact('isLogin'));
 })->name('dashboard');
 
 Route::get('/about', function () {
