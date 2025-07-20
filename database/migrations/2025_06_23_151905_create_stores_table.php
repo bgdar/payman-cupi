@@ -17,6 +17,7 @@ return new class extends Migration
               $table->string('judul_product');
             $table->text('deskripsi');
             $table->integer('harga');
+            //jumlah produk yang tersedia
             $table->integer('on_sale'); 
 
             $table->timestamps();

@@ -24,4 +24,6 @@ Homestead.yaml
 Thumbs.db
 
 #nantik cari alternatif penyimpanan yg baik seperti __google drive__
-/public/3d/
+# sekarang saya ignore dulu
+/public/3d/coffee.gbl
+

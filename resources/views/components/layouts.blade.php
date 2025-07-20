@@ -33,6 +33,62 @@
 </style>
 
 <body data-bs-spy="scroll" data-bs-target="#navbar">
+
+
+    {{-- MOdal Modal yanga akan di terima pada setiap page start --}}
+
+    @if (session('success'))
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Berhasil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>{{ session('success') }}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+                </div>
+            </div>
+        </div>
+    @elseif (session('info'))
+        {
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Informasi</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>{{ session('info') }}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+                </div>
+            </div>
+        </div>
+        }
+    @elseif (session('error'))
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Error</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>{{ session('error') }}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+                </div>
+            </div>
+        </div>
+    @endif
+
+
+    {{-- MOdal Modal yanga akan di terima pada setiap page and --}}
+
     @if ($isNavbar)
         {{-- navbar start --}}
         <nav id="globalNav" class="position-fixed top-0 navbar bg-light px-1 py-2"
@@ -63,6 +119,12 @@
                     <a class="nav-link" href="{{ route('tableReservations') }}">
                         <i class="bi bi-door-open-fill me-1"></i>
                         <span>Reservasi Meja</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('user') }}">
+                        <i class="bi bi-person-lines-fill"></i>
+                        <span>Users</span>
                     </a>
                 </li>
                 <li class="nav-item">

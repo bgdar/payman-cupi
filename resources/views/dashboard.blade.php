@@ -11,6 +11,10 @@
             </div>
 
             <p class="fs-5 fst-italic">Ngopi Lôn, Nyang Kupi Payman</p>
+            {{-- ini akan muncul jika penggunaa belum pernah  atau belum login --}}
+            <div class="info">
+                <p class="text-muted"><a href="{{ route('user.login') }}">Get started</a>
+            </div>
         </div>
     </main>
 
