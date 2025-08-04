@@ -40,7 +40,8 @@
                     <div class="card-footer bg-foam-white text-center py-3">
                         <small class="cl-coffee-black">
                             Belum punya akun?
-                            <a href="/register" class="cl-caramel text-decoration-none">Daftar di sini</a>
+                            <a href="{{ route('user.register') }}" class="cl-caramel text-decoration-none">Daftar di
+                                sini</a>
                         </small>
                     </div>
 

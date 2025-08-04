@@ -4,9 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\admins;
 
-class AdminsSeeder extends Seeder
+class AdminStoresSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +13,5 @@ class AdminsSeeder extends Seeder
     public function run(): void
     {
         //
-        admins::factory()->count(2)->create();
     }
 }

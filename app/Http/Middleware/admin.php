@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use App\Models\admins;
+use App\Models\User;
 use Symfony\Component\HttpFoundation\Response;
 
 class admin
@@ -20,12 +21,17 @@ class admin
        // validasi jika admin ata bukan 
 $admins = admins::all();
 
-        // if($admins-)
+// jika user adlah admin maka izinkan
 
-      
-        // Jika bukan admin, redirect atau tampilkan pesan error    
+        if($admins->find(auth()->user()->name) && $admins->find(auth()->user()->password)){
 
-        return $next($request);
+            // Jika admin, lanjutkan ke request berikutnya
+            return $next($request);
+        }else {
+            // untuk sekarang biarkan ada info dulu
+            // Jika bukan admin, redirect atau tampilkan pesan error    
+            return redirect()->route('dashboard')->with('error', 'You do not have admin access.');
+        }
 
 
     }

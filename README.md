@@ -58,6 +58,10 @@ npm run dev
     status
     created_at
     updated_at
+3.  `admin` = model, factory, controller ,seeder
+    data admin , ambil dari data user yang login jika sesuai password dan name maka bisa login
+4.  `admin_store` = model , factory , controller , seeder
+    Di sini untuk menyimpan data data pelanggan yang sudah chekcout meja dan coffenya
 
 ### flash message
 

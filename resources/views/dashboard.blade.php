@@ -1,5 +1,12 @@
 <x-layouts :title="'Dashboard'" :isNavbar="true">
 
+    {{-- Info popup  --}}
+
+    @if (session('error'))
+        <x-popup-info type="info" :Messsage="{{ $error }}"></x-popup-info>
+    @endif
+
+
     {{-- main dashboard start --}}
     <main id="dashboard" class=" d-flex align-items-center justify-content-center min-vh-100 mask-botton">
         <div class="container text-center text-white">

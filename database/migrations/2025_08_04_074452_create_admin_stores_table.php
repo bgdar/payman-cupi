@@ -1,30 +1,34 @@
 <?php
 
+use App\Models\AdminStores;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+
+    protected $model = AdminStores::class;
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-        Schema::create('admins', function (Blueprint $table) {
+        Schema::create('admin_stores', function (Blueprint $table) {
             $table->id();
-
-            //data admin
+                   //isis dari data user yang di dapat 
+            //data setiap user user 
             $table->string('name');
-            $table->string('password');
-            $table->string("email")->unique();
             $table->integer('phone')->nullable();
-            $table->string('address')->nullable();
+            $table->string('email')->unique();
+
+            //data pesanan 
+            $table->string("judul_product");
+            $table->integer('harga');
+
 
             $table->timestamps();
         });
-
- 
     }
 
     /**
@@ -32,7 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('admins');
-  
+        Schema::dropIfExists('admin_stores');
     }
 };
