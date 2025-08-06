@@ -1,5 +1,13 @@
 <x-layouts>
 
+    @if (session('success'))
+        <x-popup-info :type="'success'" :message="session('success')"></x-popup-info>
+    @elseif (session('error'))
+        <x-popup-info :type="'error'" :message="session('error')"></x-popup-info>
+    @elseif (session('info'))
+        <x-popup-info :type="'info'" :message="session('info')"></x-popup-info>
+    @endif
+
     <header>
         <h3>Admin</h3>
     </header>

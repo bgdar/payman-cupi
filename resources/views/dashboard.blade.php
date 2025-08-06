@@ -1,9 +1,13 @@
-<x-layouts :title="'Dashboard'" :isNavbar="true">
+<x-layouts :title="'Dashboard'" :isNavbarFixed="true" :isNavbar="true">
 
     {{-- Info popup  --}}
 
     @if (session('error'))
-        <x-popup-info type="info" :Messsage="{{ $error }}"></x-popup-info>
+        <x-popup-info type="info" :messsage="session('error')"></x-popup-info>
+    @elseif (session('success'))
+        <x-popup-info type="success" :messsage="session('success')"></x-popup-info>
+    @elseif (session('info'))
+        <x-popup-info type="info" :messsage="session('info')"></x-popup-info>
     @endif
 
 
@@ -19,11 +23,12 @@
 
             <p class="fs-5 fst-italic">Ngopi Lôn, Nyang Kupi Payman</p>
             {{-- ini akan muncul jika penggunaa belum pernah  atau belum login --}}
-            @if ($isLogin != null)
-                <div class="info">
-                    <p class="text-muted"><a href="{{ route('user.login') }}">Get started</a>
-                </div>
-            @endif
+            <a href="{{ route('store') }}" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                data-bs-title="click untuk selanjutnya..." class="btn bg-mocha cl-cup-gray ">
+                mantap
+            </a>
+
+
         </div>
     </main>
 

@@ -19,9 +19,9 @@ class admin
     {
 
        // validasi jika admin ata bukan 
-$admins = admins::all();
+    $admins = admins::all();
 
-// jika user adlah admin maka izinkan
+    // jika user adlah admin maka izinkan
 
         if($admins->find(auth()->user()->name) && $admins->find(auth()->user()->password)){
 

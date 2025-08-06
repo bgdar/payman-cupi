@@ -1,4 +1,12 @@
-<x-layouts :title="'Store'" :isNavbar="true">
+<x-layouts :title="'Store'" :isNavbarFixed="true" :isNavbar="true">
+
+    @if (session('success'))
+        <x-popup-info :type="'success'" :message="session('success')"></x-popup-info>
+    @elseif (session('error'))
+        <x-popup-info :type="'error'" :message="session('error')"></x-popup-info>
+    @elseif (session('info'))
+        <x-popup-info :type="'info'" :message="session('info')"></x-popup-info>
+    @endif
 
     {{-- stiap element paling atas di berikan margin 6rem --}}
     <header class="d-flex w-full justify-content-between px-5" style="margin-top: 6rem;">
@@ -28,12 +36,12 @@
 
     </header class="container py-5">
 
-    <div class="row g-4">
+    <div class="row g-4 p-2.5">
 
         <!-- Card 1 -->
 
         @foreach ($datas as $data)
-            <div class="p-1 col-12 col-md-6 col-lg-3">
+            <div class=" col-12 col-md-6 col-lg-3">
                 <div class="card h-100 shadow-sm">
                     <img src="https://source.unsplash.com/300x200/?coffee" class="card-img-top" alt="Kopi Hitam">
                     <div class="card-body card-product" data-id="{{ $data->id }}">

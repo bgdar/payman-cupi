@@ -1,6 +1,12 @@
-# Aplikasi kedai kopi fullstack with **laravel**
+# Kede kupi
+
+web app untuk penjualan kupi "cofee" secara **online**
 
 ### Tech stack
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=vscode,php,laravel,bootstrap,jquery" alt="Skill Icons" />
+</p>
 
 -   `Laravel` (php)
 -   `jquery` (javascript)
@@ -32,6 +38,9 @@ npm run dev
 3. `/table_revantions` = halaman di mana user booking meja
    [1^] terhubung ke store jadi , jika memilih meja atau setelahnya , maka bisa memilih menu di store 'redirect
 4. **`/admin `** route admin **Dashboard** yang hanya bisa di akses oleh adminya
+5. `user/login` = halaman login user
+   dev : user **dar** , password : **dar** , email : **dar@gmail.com**
+6. `user/register ` = halaman user membuat acccunt baru
 
 ### Database (table)
 

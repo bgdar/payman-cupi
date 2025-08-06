@@ -8,7 +8,7 @@ use Illuminate\View\Component;
 
 class popupInfo extends Component
 {
-    public $Messsage;
+    public $message;
     public $type;
     /**
      * Create a new component instance.

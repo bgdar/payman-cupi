@@ -11,6 +11,9 @@
         "Noto Color Emoji";
 }
 
+:root {
+}
+
 /* daftar color */
 .bg-cup-gray {
     background-color: #d0d0d0;
@@ -110,6 +113,21 @@
     pointer-events: auto;
 }
 /* store and */
+
+/* Tools Boostrap start */
+
+.tooltip-inner {
+    /* Ubah warna isi tooltip */
+    background-color: #a48656;
+    color: 0a0405;
+}
+
+.tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+    /* Ubah warna panah tooltip (arah bawah) */
+    border-top-color: #3e2723;
+}
+
+/* Tools Boostrap and */
 
 /* Tampilkan menu otomatis di layar besar */
 @media (min-width: 992px) {

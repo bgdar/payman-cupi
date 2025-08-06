@@ -14,7 +14,7 @@
 
                     <!-- Body -->
                     <div class="card-body px-4 py-5">
-                        <form action="/register" method="POST">
+                        <form action=" {{ route('user.register.create') }}" method="POST">
                             @csrf
 
                             <div class="mb-3">
@@ -28,12 +28,12 @@
                                 <input type="email" id="email" name="email" class="form-control" required
                                     style="border-radius: 0.75rem; box-shadow: none;">
                             </div>
-
                             <div class="mb-3">
                                 <label for="password" class="form-label cl-coffee-black">Password</label>
                                 <input type="password" id="password" name="password" class="form-control" required
                                     style="border-radius: 0.75rem; box-shadow: none;">
                             </div>
+
 
                             <div class="mb-4">
                                 <label for="password_confirmation" class="form-label cl-coffee-black">Konfirmasi
@@ -53,7 +53,8 @@
                     <div class="card-footer bg-foam-white text-center py-3">
                         <small class="cl-coffee-black">
                             Sudah punya akun?
-                            <a href="/login" class="cl-caramel text-decoration-none">Masuk di sini</a>
+                            <a href="{{ route('user.login') }}" class="cl-caramel text-decoration-none">Masuk di
+                                sini</a>
                         </small>
                     </div>
 

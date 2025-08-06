@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\admins;
+
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\admins;
 
 class AdminsSeeder extends Seeder
 {
@@ -13,7 +14,13 @@ class AdminsSeeder extends Seeder
      */
     public function run(): void
     {
+     admins::created([
+            "name"=>"dar",
+            "email"=>"dar@gmail.com",
+            "password"=>"dar",
+            "phone"=>"089523135244",
+            "address"=>"Kec.Kuta baro Aceh besar",
+        ]);
         //
-        admins::factory()->count(2)->create();
     }
 }

@@ -1,6 +1,8 @@
 <x-layouts>
 
 
+
+
     <div class="container py-5">
         <div class="row justify-content-center">
             <div class="col-md-6 col-lg-5">
@@ -14,20 +16,25 @@
 
                     <!-- Body -->
                     <div class="card-body px-4 py-5">
-                        <form action="/login" method="POST">
+                        <form action="{{ route('user.login.post') }}" method="POST">
                             @csrf
-
-                            <div class="mb-3">
-                                <label for="email" class="form-label cl-coffee-black">Email</label>
-                                <input type="email" id="email" name="email" class="form-control" required
+                            <div class="mb-4">
+                                <label for="username" class="form-label cl-coffee-black">username</label>
+                                <input type="username" id="username" name="username" class="form-control" required
                                     style="border-radius: 0.75rem; box-shadow: none;">
                             </div>
-
                             <div class="mb-4">
                                 <label for="password" class="form-label cl-coffee-black">Password</label>
                                 <input type="password" id="password" name="password" class="form-control" required
                                     style="border-radius: 0.75rem; box-shadow: none;">
                             </div>
+
+                            {{-- <div class="mb-3">
+                                <label for="email" class="form-label cl-coffee-black">Email</label>
+                                <input type="email" id="email" name="email" class="form-control" required
+                                    style="border-radius: 0.75rem; box-shadow: none;">
+                            </div> --}}
+
 
                             <button type="submit" class="btn bg-mocha w-100"
                                 style="color: #fff; border-radius: 0.5rem; border: none;">

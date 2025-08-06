@@ -1,11 +1,4 @@
-<x-layouts :title="'Table Reservations'" :isNavbar="true" :is3dModel="true">
-
-    {{-- saya mau paralax effect yg saat di scroll halaman nya tetap --}}
-
-    {{-- saya mau paralax effect yg saat di scroll halaman nya tetap # --}}
-
-
-
+<x-layouts :title="'Table Reservations'" :isNavbarFixed="true" :isNavbar="true" :is3dModel="true">
 
 
     <main

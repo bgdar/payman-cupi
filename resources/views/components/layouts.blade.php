@@ -1,4 +1,10 @@
-@props(['isNavbar' => false, 'isFooter' => false, 'title' => 'Payman cupi', 'is3dModel' => false]) {{-- Layout utama App --}}
+@props([
+    'isNavbar' => false,
+    'isNavbarFixed' => false,
+    'isFooter' => false,
+    'title' => 'Payman cupi',
+    'is3dModel' => false,
+]) {{-- Layout utama App --}}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,63 +41,21 @@
 <body data-bs-spy="scroll" data-bs-target="#navbar">
 
 
-    {{-- MOdal Modal yanga akan di terima pada setiap page start --}}
+    {{-- MOdal Modal yanga akan di terima  start --}}
 
     @if (session('success'))
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Berhasil</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>{{ session('success') }}</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
-                </div>
-            </div>
-        </div>
-    @elseif (session('info'))
-        {
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Informasi</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>{{ session('info') }}</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
-                </div>
-            </div>
-        </div>
-        }
+        <x-popup-info :type="'success'" :message="session('success')"></x-popup-info>
     @elseif (session('error'))
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Error</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>{{ session('error') }}</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
-                </div>
-            </div>
-        </div>
+        <x-popup-info :type="'error'" :message="session('error')"></x-popup-info>
+    @elseif (session('info'))
+        <x-popup-info :type="'info'" :message="session('info')"></x-popup-info>
     @endif
 
-
-    {{-- MOdal Modal yanga akan di terima pada setiap page and --}}
+    {{-- MOdal Modal yanga akan di teri and --}}
 
     @if ($isNavbar)
         {{-- navbar start --}}
-        <nav id="globalNav" class="position-fixed top-0 navbar bg-light px-1 py-2"
+        <nav id="globalNav" class=" {{ $isNavbarFixed ? 'position-fixed top-0 ' : '' }} navbar bg-light px-1 py-2"
             style="z-index: 1000; width: 100vw;;">
             {{-- Tombol toggle menu (untuk mobile) --}}
             <button id="menu-items" class="btn d-lg-none">

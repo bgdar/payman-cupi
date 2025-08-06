@@ -17,14 +17,11 @@ class StoreFactory extends Factory
     public function definition(): array
     {
         return [
-
+            'img' => $this->faker->imageUrl(640, 480, 'products', true),
             'judul_product'=>$this->faker->word(),
             'deskripsi'=>$this->faker->sentence(),
-            'harga'=>$this->faker->numberBetween(),
+            'harga'=>$this->faker->numberBetween(10000, 500000),
             'on_sale'=>$this->faker->randomNumber(5),
-
-            
-            //
         ];
     }
 }
