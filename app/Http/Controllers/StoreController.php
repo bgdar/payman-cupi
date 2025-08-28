@@ -20,10 +20,15 @@ class StoreController extends Controller
     
 
     /**
-     * Show the form for creating a new resource.
+     * post : terima semua data 
      */
-    public function create() {
-        //
+    public function create(Request $request) {
+        $data = $request->all();
+          // Untuk debugging di log, bukan ke response
+    
+          // contoh kembalikan response
+        return response()->json($data);
+
     }
 
     /**

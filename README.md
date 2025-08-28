@@ -72,6 +72,13 @@ npm run dev
 4.  `admin_store` = model , factory , controller , seeder
     Di sini untuk menyimpan data data pelanggan yang sudah chekcout meja dan coffenya
 
+### current auth ( khusus dev mode)
+
+1. user :
+   username : `dar` , password : `dar`
+2. **admin** :
+   username :`darAdmin` , password : `darAdmin`,
+
 ### flash message
 
 semua flash mesaage akan tampil pada setiap halaman dengan suatu keadaan ,karena saya menyimpnanya di layouts jadi bisa di gunakan di mana saja

@@ -5,7 +5,6 @@ use App\Http\Controllers\TableRervationController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\admin;
 use App\Http\Middleware\authentication;
-use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 
@@ -33,6 +32,7 @@ Route::get('/about', action: function () {
 
 //=======Store start=========
 Route::get('/store', [StoreController::class,'index'])->name('store')->middleware(authentication::class);
+Route::post('/store/sendProduct',[StoreController::class,"create"])->name('store.send');
 //=======Store and =========
 
 //========page revisi meja start===
@@ -46,5 +46,5 @@ Route::post('/tableReservations/create',[TableRervationController::class,'create
 // ========== ADMIN ROUTE ( private ) ==========
 
 
-Route::get('/admin',[AdminsController::class,'index'])->name('admin.index')->middleware(admin::class);
+Route::get('/admin',[AdminsController::class,'index'])->name('admin.index')->middleware([authentication::class,admin::class]);
 

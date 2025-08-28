@@ -20,7 +20,7 @@
 
                 </i>
                 <span id="label-shopping" class="badge position-absolute bg-danger rounded-circle text-light d-none"
-                    style="top: -5px; right: -5px;z-index:20; transform: translate(50%, -50%);">></span>
+                    style="top: -5px; right: -5px;z-index:20; transform: translate(50%, -50%);"></span>
             </button>
             <button class="btn btn-primary position-relative">
                 <i class="bi bi-search" title="search"></i>
@@ -45,11 +45,11 @@
                 <div class="card h-100 shadow-sm">
                     <img src="https://source.unsplash.com/300x200/?coffee" class="card-img-top" alt="Kopi Hitam">
                     <div class="card-body card-product" data-id="{{ $data->id }}">
-                        <h5 class="card-title">{{ $data->judul_product }}</h5>
+                        <h5 id="judul-product" class="card-title">{{ $data->judul_product }}</h5>
                         <p class="card-text text-muted">{{ $data->deskripsi }}</p>
                         <div class="d-flex justify-content-and">
                             <hr>
-                            <p>{{ $data->on_sale }}</p>
+                            <p id="harga-product">{{ $data->on_sale }}</p>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
                             <span class="fw-bold">{{ $data->harga }}</span>
@@ -79,10 +79,44 @@
             <h5 class="offcanvas-title" id="offcanvasExampleLabel">Daftar Belanja</h5>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body">
-            <p>Belum ada produk yang ditambahkan ke keranjang.</p>
-            {{-- Daftar produk yang ditambahkan ke keranjang akan muncul di sini --}}
+        <div id="daftar-products" class="offcanvas-body container bg-foam-white cl-coffee-black p-4 rounded">
+
+            <h3 class="cl-mocha mb-3">Daftar Product</h3>
+
+            <div id="list-products"
+                class="p-3 m-2 row row-cols-md-3 row-cols-sm-2 row-cols-1 bg-latte-beige rounded shadow-sm">
+                {{-- semua daftar product yg di click akan di tambah di sini --}}
+            </div>
+
+
+
+            {{-- kirim keserver --}}
+            <form id="form-send" method="post" action="{{ route('store.send') }}" class="mt-4">
+                @csrf
+                <label for="alamat" class="block cl-mocha font-semibold">Alamat</label>
+                <input type="text" name="alamat" id="alamat" placeholder="Alamat kamu"
+                    class="w-full p-2 rounded bg-foam-white border border-caramel cl-coffee-black mb-3">
+
+                <label for="phone" class="block cl-mocha font-semibold">Phone</label>
+                <input type="number" name="phone" id="phone" placeholder="Nomor telepon"
+                    class="w-full p-2 rounded bg-foam-white border border-caramel cl-coffee-black mb-3">
+
+                <input type="hidden" name="info-pengguna">
+                <div class="position-flex justify-content-around ">
+
+                    <button type="submit" to="{{ route('store.send') }}"
+                        class="mt-2 px-4 py-2 rounded bg-mocha cl-foam-white hover:bg-caramel">
+                        Send
+                    </button>
+                    <button id="btn-clean-product" type="button"
+                        class="mt-3 px-3 py-2 rounded bg-cup-gray cl-coffee-black hover:bg-caramel">
+                        Clean
+                    </button>
+                </div>
+
+            </form>
         </div>
+
     </div>
     {{-- shopping and --}}
 

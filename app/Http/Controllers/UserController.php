@@ -38,8 +38,7 @@ class UserController extends Controller
         $name = User::whereName($username)->first();
         // ambil data d
         if($name && Hash::check($password, $name->password)) {
-            // Jika user ditemukan, lakukan sesuatu
-            Log::info("User ditemukan", ['username' => $username]);
+         
              // Login berhasil
             Auth::login($name); // Login manual
             //  return response()->json($request->all()); // untuk tes
@@ -47,7 +46,6 @@ class UserController extends Controller
         } else {
             // Jika user tidak ditemukan, lakukan sesuatu
 
-            Log::warning("User tidak ditemukan", ['username' => $username]);
             return redirect()->back()->withErrors(['error' => 'Username atau password salah']);
         }
 
