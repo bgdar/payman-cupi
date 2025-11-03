@@ -1,4 +1,4 @@
-<x-layouts :title="'Dashboard'" :isNavbarFixed="true" :isNavbar="true">
+<x-layouts-user :title="'Dashboard'" :isNavbarFixed="true" :isNavbar="true">
 
     {{-- Info popup  --}}
 
@@ -23,9 +23,13 @@
 
             <p class="fs-5 fst-italic">Ngopi Lôn, Nyang Kupi Payman</p>
             {{-- ini akan muncul jika penggunaa belum pernah  atau belum login --}}
-            <a href="{{ route('store') }}" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                data-bs-title="click untuk selanjutnya..." class="btn bg-mocha cl-cup-gray ">
-                mantap
+            <a href="{{ $loginName != null ? route('store') : route('user.login') }}" data-bs-toggle="tooltip"
+                data-bs-placement="bottom" data-bs-title="click untuk selanjutnya..." class="btn bg-mocha cl-cup-gray ">
+                @if ($loginName == null)
+                    SignIn
+                @else
+                    welcome {{ $loginName }}
+                @endif
             </a>
 
 
@@ -88,4 +92,4 @@
 
     {{-- dasboard js --}}
     @vite('resources/js/dashboard.js')
-</x-layouts>
+</x-layouts-user>

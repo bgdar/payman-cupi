@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\admins;
+use App\Models\Admin;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminsController extends Controller
@@ -12,7 +13,29 @@ class AdminsController extends Controller
      */
     public function index()
     {
-    return view("ADMIN.admin");
+        // ambil semua data user yang di kelola oleh admin
+        $all_user  = Admin::with("grupe-kode")->get();
+        return view("admin.index", compact("all_user"));
+    }
+    /**
+     * Display halaman login untuk admin
+     */
+    public function adminLogin()
+    {
+        // jika user yang login maka update role nya
+        $user = User::where("role", "user")->first();
+        if ($user) {
+            $user->role = 'admin';
+            $user->save();
+        }
+
+        return view("admin.login");
+    }
+    public function adminPostLoggin(Request $request)
+    {
+        $name = $request->input("username");
+        $password = $request->input("password");
+        $grupe_kode = $request->input("grupe-kode");
     }
 
     /**
@@ -34,7 +57,7 @@ class AdminsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(admins $admins)
+    public function show(Admin $admin)
     {
         //
     }
@@ -42,7 +65,7 @@ class AdminsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(admins $admins)
+    public function edit(Admin $admins)
     {
         //
     }
@@ -50,7 +73,7 @@ class AdminsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, admins $admins)
+    public function update(Request $request, Admin $admins)
     {
         //
     }
@@ -58,7 +81,7 @@ class AdminsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(admins $admins)
+    public function destroy(Admin $admins)
     {
         //
     }

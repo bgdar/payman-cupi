@@ -1,6 +1,4 @@
-<x-layouts>
-
-
+<x-layouts-user>
     <div class="container py-5">
         <div class="row justify-content-center">
             <div class="col-md-6 col-lg-5">
@@ -62,4 +60,4 @@
             </div>
         </div>
     </div>
-</x-layouts>
+</x-layouts-user>

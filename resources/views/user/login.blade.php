@@ -1,7 +1,4 @@
-<x-layouts>
-
-
-
+<x-layouts-user>
 
     <div class="container py-5">
         <div class="row justify-content-center">
@@ -29,11 +26,12 @@
                                     style="border-radius: 0.75rem; box-shadow: none;">
                             </div>
 
-                            {{-- <div class="mb-3">
-                                <label for="email" class="form-label cl-coffee-black">Email</label>
-                                <input type="email" id="email" name="email" class="form-control" required
+                            <div class="mb-3">
+                                <label for="grupe-kode" class="form-label cl-coffee-black">Admin kode</label>
+                                <input type="number" id="grupe-kode" name="grupe-kode" class="form-control"
+                                    placeholder="mintak ke pemilik kede atau admin"
                                     style="border-radius: 0.75rem; box-shadow: none;">
-                            </div> --}}
+                            </div>
 
 
                             <button type="submit" class="btn bg-mocha w-100"
@@ -57,4 +55,4 @@
         </div>
     </div>
 
-</x-layouts>
+</x-layouts-user>

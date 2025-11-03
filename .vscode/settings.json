@@ -1,6 +1,7 @@
 {
     "workbench.colorTheme": "One Dark Pro Darker",
-    "editor.fontFamily": "FiraCode Nerd Font",
+    "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
+    
     // formating konfigurasi untuk .blade
     "[blade]": {
         "editor.defaultFormatter": "shufo.vscode-blade-formatter",
@@ -8,7 +9,7 @@
     },
     // formating untuk php
     "[php]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
         "editor.formatOnSave": true
     }
 }

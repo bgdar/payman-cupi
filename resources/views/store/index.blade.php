@@ -1,4 +1,4 @@
-<x-layouts :title="'Store'" :isNavbarFixed="true" :isNavbar="true">
+<x-layouts-user :title="'Store'" :isNavbarFixed="true" :isNavbar="true">
 
     @if (session('success'))
         <x-popup-info :type="'success'" :message="session('success')"></x-popup-info>
@@ -122,4 +122,4 @@
 
 
     @vite(entrypoints: 'resources/js/store/index.js')
-</x-layouts>
+</x-layouts-user>

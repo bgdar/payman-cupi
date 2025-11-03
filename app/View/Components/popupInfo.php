@@ -18,8 +18,6 @@ class popupInfo extends Component
         $this->type = $type;
         $this->message = $message;
     }
-  
-
     /**
      * Get the view / contents that represent the component.
      */

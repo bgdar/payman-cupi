@@ -1,4 +1,4 @@
-<x-layouts :title="'About Us'">
+<x-layouts-user :title="'About Us'">
 
 
     <div class="mt-4">
@@ -7,5 +7,4 @@
         <p>Thank you for visiting us!</p>
     </div>
 
-
-</x-layouts>
+</x-layouts-user>

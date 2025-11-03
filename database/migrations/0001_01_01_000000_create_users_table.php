@@ -16,6 +16,17 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            // code grup_kode for connect admin | samakan type dengan admins | tidak wajib diisi jika user berdiri sendiri
+            $table->unsignedInteger('grupe_kode')->nullable();
+            $table->foreign('grupe_kode')
+                ->references('grupe_kode')
+                ->on('admins')
+                ->onDelete('cascade');
+
+
+            // role user 
+            $table->enum('role', ['user', 'admin'])->default('user');
+            $table->string('img')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

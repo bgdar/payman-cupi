@@ -12,6 +12,7 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
+
     /**
      * The attributes that are mass assignable.
      *
@@ -44,5 +45,14 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    /**
+     * relasi function untuk melihat data dari admin
+     * atau users yang di miliki oleh admin
+     */
+    public function admin()
+    {
+        return $this->belongsTo(Admin::class, "grupe_kode", "grupe_kode");
     }
 }

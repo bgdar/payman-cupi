@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('admins', function (Blueprint $table) {
-            $table->id();
-
+            // code grupe && wajib di sisi dan tidak boleh kosong
+            $table->unsignedInteger("grupe_kode")->primary();
             //data admin
             $table->string('name');
             $table->string('password');
@@ -23,8 +23,6 @@ return new class extends Migration
 
             $table->timestamps();
         });
-
- 
     }
 
     /**
@@ -33,6 +31,5 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('admins');
-  
     }
 };

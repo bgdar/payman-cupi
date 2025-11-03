@@ -1,4 +1,4 @@
-<x-layouts :title="'Table Reservations'" :isNavbarFixed="true" :isNavbar="true" :is3dModel="true">
+<x-layouts-user :title="'Table Reservations'" :isNavbarFixed="true" :isNavbar="true" :is3dModel="true">
 
 
     <main
@@ -123,4 +123,4 @@
     </main>
 
     @vite(entrypoints: 'resources/js/table-reservations/index.js')
-</x-layouts>
+</x-layouts-user>
